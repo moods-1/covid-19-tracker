@@ -1,6 +1,6 @@
 # COVID-19 Global Tracker  
 
-This app tracks past and current COVID-19 global cases, recoveries, and deaths. It has many effective visual aids to help end-user get a clear understanding quickly. The app includes a map that displays information for each location when the location marker is clicked. There is also  charts and a table for reference material.
+This app tracks past and current COVID-19 global cases, recoveries, and deaths. It has many effective visual aids to help the end-user get a clear understanding quickly. The app includes a map that displays information for each location when the location marker is clicked. There is also  charts and a table for reference material.
 
 ## Tools used in creation of this project:
 - React JS
