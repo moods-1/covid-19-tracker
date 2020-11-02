@@ -1,0 +1,6 @@
+.linegraph{
+    margin-top: 20px;
+    width: 100%;
+    min-height: 350px;
+    flex-grow: 1;
+}
