@@ -1,0 +1,20 @@
+.table__box{
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 320px;
+    width: 100%;
+}
+.table{
+    width: 100%;
+}
+.table_row{
+    display: flex;
+    justify-content: space-between;
+}
+.table td{
+    padding: 8px;
+}   
+.table tr:nth-of-type(odd){
+    background-color: rgb(240,240,240);
+}
+
