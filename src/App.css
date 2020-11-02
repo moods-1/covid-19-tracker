@@ -61,7 +61,7 @@ input[type="range"]{
     padding: 0;
   }
   .app__left{
-    padding: 0px;
+    padding: 10px;
   }
 }
 #bar-line label{
@@ -83,6 +83,9 @@ input[type="range"]{
   .app, .app__left{
     padding: 0px;
     width: 100%;
+  }
+  .app__header{
+    padding: 10px;
   }
   .app__stats{
     flex-direction: column;
