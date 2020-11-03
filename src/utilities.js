@@ -96,3 +96,8 @@ export const showDataOnMap = (data, casesType = "cases") =>
       </Popup>
     </Circle>
   ));
+
+  export const firstCap = text => 
+    text.split(" ")
+    .map(x=> x.charAt(0).toUpperCase() + x.substr(1))
+    .join("");

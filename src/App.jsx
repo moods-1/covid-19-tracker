@@ -10,7 +10,7 @@ import React, { useState, useEffect } from "react";
 import InfoBox from "./components/InfoBox";
 import Map from "./components/Map";
 import Table from "./components/Table";
-import { sortData } from "./utilities";
+import { sortData, firstCap } from "./utilities";
 import Graph from "./components/Graph";
 import "leaflet/dist/leaflet.css";
 
@@ -19,7 +19,7 @@ function App() {
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
-  const [mapCenter, setMapCenter] = useState({ lat: 30, lng: -45 });
+  const [mapCenter, setMapCenter] = useState({ lat: 30, lng: -80 });
   const [mapZoom, setMapZoom] = useState(4);
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState("cases");
@@ -27,7 +27,7 @@ function App() {
   const [periodDays, setPeriodDays] = useState(30);
   const baseURL = "https://disease.sh/v3/covid-19/";
 
-  useEffect(()=> window.innerWidth < 1024 && setMapZoom(3),[]);
+  useEffect(()=> window.innerWidth <= 1024 && setMapZoom(2.5),[]);
   
   useEffect(() => {
     fetch(`${baseURL}all`)
@@ -71,7 +71,7 @@ function App() {
         setCountryInfo(data);
         if(countryCode === "worldwide"){
           setMapCenter({ lat: 30, lng: -45 });
-          setMapZoom(4);
+          setMapZoom(3);
         }else{
           setMapCenter({lat:Number(data.countryInfo.lat), lng:Number(data.countryInfo.long)});
           setMapZoom(5);
@@ -135,11 +135,12 @@ function App() {
           />
         </div>
       </div>
-      <Card className="app__right">
+      <div className="app__right">
+      <Card >
         <CardContent>
-          <h3>Live cases by country</h3>
+          <h3>Recorded Cases by Country</h3>
           <Table countries={tableData} />
-          <h3 id="worldwide-h3">Worldwide new {casesType}</h3>
+          <h3 id="worldwide-h3">Worldwide New {firstCap(casesType)}</h3>
           <section id="bar-line">
             <label htmlFor="lineGraph">Line graph</label>
             <input 
@@ -163,6 +164,8 @@ function App() {
           <Graph  period={periodDays} graphType={graphType} casesType={casesType}/>
         </CardContent>
       </Card>
+      </div>
+      
     </div>
   );
 }

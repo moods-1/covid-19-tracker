@@ -20,7 +20,6 @@ body{
   display: flex;
   flex-direction: column;
   min-width: 320px;
-  padding: 5px;
 }
 .app__right .MuiCardContent-root{
   display: flex;
@@ -44,6 +43,7 @@ body{
 .app__stats{
   display: flex;
   justify-content: space-between;
+  padding-right: 10px !important;
 }
 #worldwide-h3{
   margin-top: 10px;
@@ -52,17 +52,6 @@ input[type="range"]{
   cursor: pointer;
   color: red;
   overflow: hidden;
-}
-@media(max-width: 1024px){
-  .app{
-    flex-direction: column;
-  }
-  .app__header{
-    padding: 0;
-  }
-  .app__left{
-    padding: 10px;
-  }
 }
 #bar-line label{
   font-weight: 600;
@@ -78,6 +67,20 @@ input[type="range"]{
 }
 #range-slider{
   width: 140px;
+}
+@media(max-width: 1024px){
+  .app{
+    flex-direction: column;
+  }
+  .app__header{
+    padding: 0;
+  }
+  .app__left{
+    padding: 10px;
+  }
+  .app__stats{
+    padding-right: 0 !important;
+  }
 }
 @media(max-width: 767px){
   .app, .app__left{
