@@ -5,7 +5,7 @@ import "../styles/Graph.css";
 
 function Graph({ period, graphType, casesType }) {
   const [data, setData] = useState([]);
-
+  
   const buildChartData = (data, casesType) => {
     let chartData = [];
     let lastDataPoint;
@@ -46,6 +46,7 @@ function Graph({ period, graphType, casesType }) {
                 data: data,
                 backgroundColor: casesType !== "recovered"? "rgba(204,16,52, 0.5)":"#7dd71d",
                 borderColor: casesType !== "recovered"? "#CC1034":"green",
+                borderWidth: 1
               },
             ],
           }}
@@ -60,6 +61,7 @@ function Graph({ period, graphType, casesType }) {
                 data: data,
                 backgroundColor: casesType !== "recovered"? "rgba(204,16,52, 0.5)":"#7dd71d",
                 borderColor:casesType !== "recovered"? "#CC1034":"green",
+                borderWidth: 1
               },
             ],
           }}
