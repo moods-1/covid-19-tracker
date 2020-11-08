@@ -46,7 +46,10 @@ function Graph({ period, graphType, casesType }) {
                 data: data,
                 backgroundColor: casesType !== "recovered"? "rgba(204,16,52, 0.5)":"#7dd71d",
                 borderColor: casesType !== "recovered"? "#CC1034":"green",
-                borderWidth: 1
+                borderWidth: 1,
+                fill: true,
+                pointStyle: 'star',
+                pointRadius: 2.5
               },
             ],
           }}
