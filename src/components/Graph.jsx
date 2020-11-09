@@ -36,7 +36,7 @@ function Graph({ period, graphType, casesType }) {
   }, [casesType, period]);
 
   return (
-    <div className="linegraph">
+    <div className="graph">
       {data?.length > 0 && graphType ==="line" && (
         <Line
           options={options}
