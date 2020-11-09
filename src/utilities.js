@@ -30,7 +30,7 @@ export const options = {
       {
         type: "time",
         time: {
-          format: "MM/DD/YY",
+          parser: "MM/DD/YY",
           tooltipFormat: "ll",
         },
       },
@@ -46,6 +46,7 @@ export const options = {
       },
     ],
   },
+  fill: false
 };
 
 // Draw circles on the map with tooltips
