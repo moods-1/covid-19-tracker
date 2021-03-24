@@ -92,6 +92,7 @@ function App() {
               variant="outlined"
               value={country}
               onChange={onCountryChange}
+              className="app__dropdown_select"
             >
               <MenuItem value="worldwide">Worldwide</MenuItem>
               {countries?.map((country, index) => (

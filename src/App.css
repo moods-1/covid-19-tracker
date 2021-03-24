@@ -1,108 +1,111 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   background-color: black;
 }
-.app{
+.app {
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
-  background: linear-gradient(rgb(65, 65, 65),rgb(45,45,45),black);
+  background: linear-gradient(rgb(65, 65, 65), rgb(45, 45, 45), black);
 }
-.app__left{
+.app__left {
   flex: 0.8;
   padding-right: 10px;
 }
-.app__right{
+.app__right {
   flex: 0.2;
   display: flex;
   flex-direction: column;
   min-width: 320px;
 }
-.app__right .MuiCardContent-root{
+.app__right .MuiCardContent-root {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
-.app__header{
+.app__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
   padding: 20px;
 }
-.app__header h1{
+.app__header h1 {
   color: White;
   font-size: 3em;
 }
-.app__dropdown{
+.app__dropdown {
   background-color: white;
+  outline-style: none;
+  border-radius: 5px;
 }
-.app__stats{
+.app__stats {
   display: flex;
   justify-content: space-between;
   padding-right: 10px !important;
 }
-#worldwide-h3{
+#worldwide-h3 {
   margin-top: 10px;
 }
-input[type="range"]{
+input[type="range"] {
   cursor: pointer;
   color: red;
   overflow: hidden;
 }
-#bar-line label{
+#bar-line label {
   font-weight: 600;
   margin-right: 5px;
 }
-#period{
+#period {
   display: flex;
   font-weight: 600;
   margin-top: 5px;
 }
-#period > p{
+#period > p {
   margin-left: 5px;
 }
-#range-slider{
+#range-slider {
   width: 140px;
 }
-@media(max-width: 1024px){
-  .app{
+@media (max-width: 1024px) {
+  .app {
     flex-direction: column;
   }
-  .app__header{
+  .app__header {
     padding: 0;
   }
-  .app__left{
+  .app__left {
     padding: 10px;
   }
-  .app__stats{
+  .app__stats {
     padding-right: 0 !important;
   }
 }
-@media(max-width: 767px){
-  .app, .app__left{
+@media (max-width: 767px) {
+  .app,
+  .app__left {
     padding: 0px;
     width: 100%;
   }
-  .app__header{
+  .app__header {
     padding: 10px;
   }
-  .app__stats{
+  .app__stats {
     flex-direction: column;
   }
 }
-@media(max-width: 414px){
-  .app__header h1{
+@media (max-width: 414px) {
+  .app__header h1 {
     font-size: 2.2em;
     margin-bottom: 10px;
   }
-  .app__header{
+  .app__header {
     flex-direction: column;
   }
-  .app__right{
+  .app__right {
     padding: 0;
   }
 }
