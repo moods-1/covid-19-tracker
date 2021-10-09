@@ -13,6 +13,7 @@ import Table from "./components/Table";
 import { sortData, firstCap } from "./utilities";
 import Graph from "./components/Graph";
 import "leaflet/dist/leaflet.css";
+import { debounce } from "lodash";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -27,8 +28,8 @@ function App() {
   const [periodDays, setPeriodDays] = useState(30);
   const baseURL = "https://disease.sh/v3/covid-19/";
 
-  useEffect(()=> window.innerWidth <= 1024 && setMapZoom(2.5),[]);
-  
+  useEffect(() => window.innerWidth <= 1024 && setMapZoom(2.5), []);
+
   useEffect(() => {
     fetch(`${baseURL}all`)
       .then((res) => res.json())
@@ -69,18 +70,22 @@ function App() {
       .then((data) => {
         setCountry(countryCode);
         setCountryInfo(data);
-        if(countryCode === "worldwide"){
+        if (countryCode === "worldwide") {
           setMapCenter({ lat: 30, lng: -45 });
           setMapZoom(3);
-        }else{
-          setMapCenter({lat:Number(data.countryInfo.lat), lng:Number(data.countryInfo.long)});
+        } else {
+          setMapCenter({
+            lat: Number(data.countryInfo.lat),
+            lng: Number(data.countryInfo.long),
+          });
           setMapZoom(5);
         }
       })
       .catch((err) => console.log(err));
   };
-  const handleGraph = e => e.target.checked? setGraphType("line"):setGraphType("bar"); 
-  const handlePeriod = e => setPeriodDays(e.target.value);
+  const handleGraph = (e) =>
+    e.target.checked ? setGraphType("line") : setGraphType("bar");
+  const handlePeriod = debounce((e) => setPeriodDays(e.target.value), 500);
 
   return (
     <div className="app">
@@ -105,7 +110,7 @@ function App() {
         </div>
         <div className="app__stats">
           <InfoBox
-            active={casesType === 'cases'}
+            active={casesType === "cases"}
             onClick={(e) => setCasesType("cases")}
             title="Coronavirus cases"
             cases={countryInfo.todayCases}
@@ -113,14 +118,14 @@ function App() {
           />
           <InfoBox
             isGreen
-            active={casesType === 'recovered'}
+            active={casesType === "recovered"}
             onClick={(e) => setCasesType("recovered")}
             title="Recovered"
             cases={countryInfo.todayRecovered}
             total={countryInfo.recovered + " Total"}
           />
           <InfoBox
-            active={casesType === 'deaths'}
+            active={casesType === "deaths"}
             onClick={(e) => setCasesType("deaths")}
             title="Deaths"
             cases={countryInfo.todayDeaths}
@@ -128,45 +133,49 @@ function App() {
           />
         </div>
         <div className="app__map">
-          <Map 
-            countries={mapCountries} 
-            casesType={casesType} 
+          <Map
+            countries={mapCountries}
+            casesType={casesType}
             center={mapCenter}
             zoom={mapZoom}
           />
         </div>
       </div>
       <div className="app__right">
-      <Card >
-        <CardContent>
-          <h3>Recorded Cases by Country</h3>
-          <Table countries={tableData} />
-          <h3 id="worldwide-h3">Worldwide New {firstCap(casesType)}</h3>
-          <section id="bar-line">
-            <label htmlFor="lineGraph">Line graph</label>
-            <input 
-              onChange={handleGraph}
-              type="checkbox" 
-              name="lineGraph" 
-              id="lineGraph"/>
-          </section>
-          <section id="period">
-            <label htmlFor="graph-range">Period (days)</label>
-            <input 
-              onChange={handlePeriod}
-              type="range" 
-              name="graph-range"
-              min="7"
-              max="120"
-              id="range-slider"
+        <Card>
+          <CardContent>
+            <h3>Recorded Cases by Country</h3>
+            <Table countries={tableData} />
+            <h3 id="worldwide-h3">Worldwide New {firstCap(casesType)}</h3>
+            <section id="bar-line">
+              <label htmlFor="lineGraph">Line graph</label>
+              <input
+                onChange={handleGraph}
+                type="checkbox"
+                name="lineGraph"
+                id="lineGraph"
               />
-            <p>{periodDays}</p>  
-          </section>
-          <Graph  period={periodDays} graphType={graphType} casesType={casesType}/>
-        </CardContent>
-      </Card>
+            </section>
+            <section id="period">
+              <label htmlFor="graph-range">Period (days)</label>
+              <input
+                onChange={handlePeriod}
+                type="range"
+                name="graph-range"
+                min="7"
+                max="120"
+                id="range-slider"
+              />
+              <p>{periodDays}</p>
+            </section>
+            <Graph
+              period={periodDays}
+              graphType={graphType}
+              casesType={casesType}
+            />
+          </CardContent>
+        </Card>
       </div>
-      
     </div>
   );
 }
