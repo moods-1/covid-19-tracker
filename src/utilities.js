@@ -53,15 +53,15 @@ export const options = {
 const casesTypeColors = {
   cases: {
     hex: "#CC1034",
-    multiplier: 275,
+    multiplier: 50,
   },
   recovered: {
     hex: "#7dd71d",
-    multiplier: 275,
+    multiplier: 60,
   },
   deaths: {
     hex: "#fb4443",
-    multiplier: 500,
+    multiplier: 400,
   },
 };
 
