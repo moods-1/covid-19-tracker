@@ -57,11 +57,11 @@ const casesTypeColors = {
   },
   recovered: {
     hex: "#7dd71d",
-    multiplier: 60,
+    multiplier: 30,
   },
   deaths: {
     hex: "#fb4443",
-    multiplier: 400,
+    multiplier: 150,
   },
 };
 
