@@ -46,8 +46,25 @@ export const options = {
       },
     ],
   },
-  fill: false
+  fill: false,
 };
+
+export const plugins =[
+  {
+    afterDraw: function (chart) {
+      if (chart.data.datasets[0].data.length < 1) {
+        let ctx = chart.ctx;
+        let width = chart.width;
+        let height = chart.height;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.font = "17px Arial";
+        ctx.fillText("No data to display", width / 2, height / 2.3);
+        ctx.restore();
+      }
+    },
+  } 
+]
 
 // Draw circles on the map with tooltips
 const casesTypeColors = {

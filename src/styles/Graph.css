@@ -1,6 +1,11 @@
 .graph{
     margin-top: 20px;
     width: 100%;
-    height: 330px;
+    height: 305px;
     flex-grow: 1;
+}
+.graph-empty {
+    display: grid;
+    place-items: center;
+    height: 100%;
 }
