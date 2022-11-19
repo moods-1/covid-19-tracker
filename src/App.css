@@ -1,121 +1,122 @@
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 body {
-  background-color: black;
+	background-color: black;
 }
 .app {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 20px;
-  background: linear-gradient(rgb(65, 65, 65), rgb(45, 45, 45), black);
+	display: flex;
+	justify-content: space-evenly;
+	padding: 20px;
+	background: linear-gradient(rgb(65, 65, 65), rgb(45, 45, 45), black);
 }
 .app__left {
-  flex: 0.8;
-  padding-right: 10px;
+	flex: 0.8;
+	padding-right: 10px;
 }
 .app__right {
-  flex: 0.2;
-  display: flex;
-  flex-direction: column;
-  min-width: 320px;
+	flex: 0.2;
+	display: flex;
+	flex-direction: column;
+	min-width: 320px;
 }
 .app__right .MuiCardContent-root {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 .app__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 20px;
 }
 .app__header h1 {
-  color: White;
-  font-size: 3em;
+	color: White;
+	font-size: 3em;
 }
 .app__dropdown {
-  background-color: white;
-  outline-style: none;
-  border-radius: 5px;
+	background-color: white;
+	outline-style: none;
+	border-radius: 5px;
 }
 .app__stats {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 10px !important;
+	display: flex;
+	justify-content: space-between;
+	padding-right: 10px !important;
 }
 #worldwide-h3 {
-  margin-top: 10px;
+	margin-top: 10px;
 }
-#bar-line{
-  display: flex;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  margin-top: 3px;
+#bar-line {
+	display: flex;
+	align-items: center;
+	padding: 0;
+	margin: 0;
+	margin-top: 3px;
 }
 #bar-line label {
-  padding: 0;
-  margin: 0;
-  font-weight: 600;
+	padding: 0;
+	margin: 0;
+	font-weight: 600;
 }
-#lineGraph{
-  margin-top: 3px;
-  margin-left: 28px;
+#lineGraph {
+	margin-top: 3px;
+	margin-left: 28px;
 }
 #period {
-  display: flex;
-  font-weight: 600;
-  margin-top: 5px;
+	display: flex;
+	font-weight: 600;
+	margin-top: 5px;
 }
 #period > p {
-  margin-left: 5px;
+	margin-left: 5px;
 }
 #range-slider {
-  width: 140px;
-  margin-left: 10px;
-  margin-right: 5px;
-  margin-top: 3px;
+	width: 140px;
+	margin-left: 10px;
+	margin-right: 5px;
+	margin-top: 3px;
 }
 @media (max-width: 1024px) {
-  .app {
-    flex-direction: column;
-  }
-  .app__header {
-    padding: 0;
-  }
-  .app__left {
-    padding: 10px;
-  }
-  .app__stats {
-    padding-right: 0 !important;
-  }
+	.app {
+		flex-direction: column;
+	}
+	.app__header {
+		padding: 0;
+	}
+	.app__left {
+		padding: 10px;
+	}
+	.app__stats {
+		padding-right: 0 !important;
+	}
 }
 @media (max-width: 767px) {
-  .app,
-  .app__left {
-    padding: 0px;
-    width: 100%;
-  }
-  .app__header {
-    padding: 10px;
-  }
-  .app__stats {
-    flex-direction: column;
-  }
+	.app,
+	.app__left {
+		padding: 0px;
+		width: 100%;
+	}
+	.app__header {
+		padding: 10px;
+	}
+	.app__stats {
+		flex-direction: column;
+		padding: 20px !important;
+	}
 }
 @media (max-width: 414px) {
-  .app__header h1 {
-    font-size: 2.2em;
-    margin-bottom: 10px;
-  }
-  .app__header {
-    flex-direction: column;
-  }
-  .app__right {
-    padding: 0;
-  }
+	.app__header h1 {
+		font-size: 2.2em;
+		margin-bottom: 10px;
+	}
+	.app__header {
+		flex-direction: column;
+	}
+	.app__right {
+		padding: 0;
+	}
 }
