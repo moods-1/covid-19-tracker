@@ -157,7 +157,7 @@ function App() {
 							/>
 						</section>
 						<section id='period'>
-							<label htmlFor='graph-range'>Period (days)</label>
+							<label htmlFor='range-slider'>Period (days)</label>
 							<input
 								onChange={handlePeriod}
 								type='range'

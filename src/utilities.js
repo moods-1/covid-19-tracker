@@ -4,7 +4,6 @@ import { Circle, Popup } from 'react-leaflet';
 
 export const sortData = (data) => {
 	const sortedData = [...data];
-	// -1 = false / 1 = true
 	return sortedData.sort((a, b) => (a.cases > b.cases ? -1 : 1));
 };
 

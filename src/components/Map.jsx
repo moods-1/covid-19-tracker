@@ -4,7 +4,7 @@ import '../styles/Map.css';
 import { showDataOnMap } from '../utilities';
 
 function Map({ countries, casesType, center, zoom }) {
-	// The hooks fix incorrect panning to countries
+	// The hooks fixes incorrect panning to countries
 	const [center1, setCenter1] = useState(center);
 	useEffect(() => setCenter1(center), [center]);
 	return (
