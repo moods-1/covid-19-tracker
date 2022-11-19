@@ -1,49 +1,48 @@
-.infoBox{
-    text-align: center;
-    flex: 1;
-    cursor: pointer;  
+.info-box {
+	text-align: center;
+	flex: 1;
+	cursor: pointer;
 }
-.infoBox:hover{
-    transition: transform .6s;
-    transform: scale(1.05);
+.info-box:hover {
+	transition: transform 0.6s;
+	transform: scale(1.05);
 }
-.infoBox:not(:last-child){
-    margin-right: 20px;
+.info-box:not(:last-child) {
+	margin-right: 20px;
 }
-.infoBox__title{
-    font-size: 18px !important;
+.info-box-title {
+	font-size: 18px !important;
 }
-.infoBox__cases{
-    color: red;
-    font-weight: 700;
-    font-size: 28px;
-    margin-bottom: 8px;
+.info-box-cases {
+	color: red;
+	font-weight: 700;
+	font-size: 28px;
+	margin-bottom: 8px;
 }
-.infoBox__cases--green{
-    color: #7dd71d;
+.info-box-cases-green {
+	color: #7dd71d;
 }
-.infoBox__total{
-    color: black !important;
-    font-weight: 700 !important;
-    font-size: 18px !important;
+.info-box-total {
+	color: black !important;
+	font-weight: 700 !important;
+	font-size: 18px !important;
 }
-.infoBox--selected{
-    border-top: 10px solid red;
+.info-box-selected {
+	border-top: 10px solid red;
 }
-.infoBox--green{
-    border-color: #7dd71d;
+.info-box-green {
+	border-color: #7dd71d;
 }
-@media(max-width: 767px){
-    .infoBox{
-        width: 100%;
-        margin-right: 0px !important;
-    }
-    .infoBox:not(:last-child){
-        margin-bottom: 5px;
-    }
-    .infoBox:hover{
-        transition: none;
-        transform: none;
-    }
-  }
-  
+@media (max-width: 767px) {
+	.info-box {
+		width: 100%;
+		margin-right: 0px !important;
+	}
+	.info-box:not(:last-child) {
+		margin-bottom: 5px;
+	}
+	.info-box:hover {
+		transition: none;
+		transform: none;
+	}
+}

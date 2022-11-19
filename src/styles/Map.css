@@ -1,55 +1,55 @@
-.map{
-    height: 540px;
-    min-width: 320px;
-    width: 98%;
-    background-color: white;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 16px 0;
-    box-shadow: 0 0 8px -4px rgba(0,0,0,0.5);
+.map {
+	height: 540px;
+	min-width: 320px;
+	width: 100%;
+	background-color: white;
+	padding: 10px;
+	border-radius: 20px;
+	margin: 16px 0;
+	box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
-.map .leaflet-container{
-    height: 100%;
+.map .leaflet-container {
+	height: 100%;
 }
-.info-flag{
-    height: 100px;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    border-radius: 8px;
-    border: lightgray solid 1px;
+.info-flag {
+	height: 100px;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 8px;
+	border: lightgray solid 1px;
 }
-.info-flag img{  
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;  
+.info-flag img {
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
 }
-.info-name{
-    font-size: 16px;
-    font-weight: 600;
+.info-name {
+	font-size: 16px;
+	font-weight: 600;
 }
-.info-cases, .info-recovered, .info-deaths{
-    font-size: 16px;
-    margin-top: 5px;
-} 
-.info-container{
-    width: 160px;
+.info-cases,
+.info-recovered,
+.info-deaths {
+	font-size: 16px;
+	margin-top: 5px;
 }
-@media(max-width: 767px){
-    .map{
-        padding: 0px;
-        border-radius: none;
-        height: 480px;
-        width: 95%;
-        margin: 8px auto;
-    }
-  }
-@media(max-width: 414px){
-    .map{
-        width: 85%;
-        height: 400px;
-    }
+.info-container {
+	width: 160px;
 }
-
-  
+@media (max-width: 767px) {
+	.map {
+		padding: 0px;
+		border-radius: none;
+		height: 480px;
+		width: 95%;
+		margin: 8px auto;
+	}
+}
+@media (max-width: 414px) {
+	.map {
+		width: 85%;
+		height: 400px;
+	}
+}

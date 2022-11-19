@@ -7,7 +7,7 @@ function Table({ countries }) {
 	const filterCountries = countries.filter(({ country }) =>
 		country.toLowerCase().includes(countryFilter.toLowerCase())
 	);
-	
+
 	return (
 		<div>
 			<div className='table-search-div'>

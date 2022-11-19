@@ -11,41 +11,40 @@ body {
 	padding: 20px;
 	background: linear-gradient(rgb(65, 65, 65), rgb(45, 45, 45), black);
 }
-.app__left {
+.app-left {
 	flex: 0.8;
 	padding-right: 10px;
 }
-.app__right {
+.app-right {
 	flex: 0.2;
 	display: flex;
 	flex-direction: column;
 	min-width: 320px;
 }
-.app__right .MuiCardContent-root {
+.app-right .MuiCardContent-root {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
 }
-.app__header {
+.app-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 20px;
-	padding: 20px;
+	padding: 20px 0px;
 }
-.app__header h1 {
+.app-header h1 {
 	color: White;
 	font-size: 3em;
 }
-.app__dropdown {
+.app-dropdown {
 	background-color: white;
 	outline-style: none;
 	border-radius: 5px;
 }
-.app__stats {
+.app-stats {
 	display: flex;
 	justify-content: space-between;
-	padding-right: 10px !important;
 }
 #worldwide-h3 {
 	margin-top: 10px;
@@ -84,39 +83,42 @@ body {
 	.app {
 		flex-direction: column;
 	}
-	.app__header {
+	.app-header {
 		padding: 0;
 	}
-	.app__left {
+	.app-left {
 		padding: 10px;
 	}
-	.app__stats {
+	.app-right {
+		padding: 10px;
+	}
+	.app-stats {
 		padding-right: 0 !important;
 	}
 }
 @media (max-width: 767px) {
 	.app,
-	.app__left {
+	.app-left {
 		padding: 0px;
 		width: 100%;
 	}
-	.app__header {
+	.app-header {
 		padding: 10px;
 	}
-	.app__stats {
+	.app-stats {
 		flex-direction: column;
 		padding: 20px !important;
 	}
 }
 @media (max-width: 414px) {
-	.app__header h1 {
+	.app-header h1 {
 		font-size: 2.2em;
 		margin-bottom: 10px;
 	}
-	.app__header {
+	.app-header {
 		flex-direction: column;
 	}
-	.app__right {
+	.app-right {
 		padding: 0;
 	}
 }
