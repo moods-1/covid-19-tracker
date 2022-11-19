@@ -50,11 +50,6 @@ body {
 #worldwide-h3 {
   margin-top: 10px;
 }
-/* input[type="range"] {
-  cursor: pointer;
-  overflow: hidden;
-  background: red;
-} */
 #bar-line{
   display: flex;
   align-items: center;
@@ -124,6 +119,3 @@ body {
     padding: 0;
   }
 }
-/* #lineGraph{
-  padding-top: 9px;
-} */

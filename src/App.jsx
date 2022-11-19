@@ -112,7 +112,7 @@ function App() {
           <InfoBox
             active={casesType === "cases"}
             onClick={(e) => setCasesType("cases")}
-            title="Coronavirus cases"
+            title="Coronavirus cases (New)"
             cases={countryInfo.todayCases}
             total={countryInfo.cases + " Total"}
           />
@@ -120,14 +120,14 @@ function App() {
             isGreen
             active={casesType === "recovered"}
             onClick={(e) => setCasesType("recovered")}
-            title="Recovered"
+            title="Recovered (Today)"
             cases={countryInfo.todayRecovered}
             total={countryInfo.recovered + " Total"}
           />
           <InfoBox
             active={casesType === "deaths"}
             onClick={(e) => setCasesType("deaths")}
-            title="Deaths"
+            title="Deaths (Today)"
             cases={countryInfo.todayDeaths}
             total={countryInfo.deaths + " Total"}
           />
