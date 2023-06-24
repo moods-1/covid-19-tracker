@@ -1,15 +1,16 @@
 .map {
 	height: 540px;
-	min-width: 320px;
+	/* min-width: 280px; */
 	width: 100%;
 	background-color: white;
 	padding: 10px;
-	border-radius: 20px;
+	border-radius: 7px;
 	margin: 16px 0;
 	box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
 }
 .map .leaflet-container {
 	height: 100%;
+	border-radius: 7px;
 }
 .info-flag {
 	height: 100px;
@@ -43,13 +44,11 @@
 		padding: 0px;
 		border-radius: none;
 		height: 480px;
-		width: 95%;
 		margin: 8px auto;
 	}
 }
 @media (max-width: 414px) {
 	.map {
-		width: 85%;
 		height: 400px;
 	}
 }

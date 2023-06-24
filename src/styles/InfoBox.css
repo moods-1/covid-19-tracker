@@ -5,7 +5,7 @@
 }
 .info-box:hover {
 	transition: transform 0.6s;
-	transform: scale(1.05);
+	transform: scale(1.02);
 }
 .info-box:not(:last-child) {
 	margin-right: 20px;

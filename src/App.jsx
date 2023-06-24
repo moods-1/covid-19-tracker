@@ -4,6 +4,7 @@ import {
 	FormControl,
 	MenuItem,
 	Select,
+	Grid,
 } from '@material-ui/core';
 import './App.css';
 import React, { useState, useEffect } from 'react';
@@ -89,93 +90,95 @@ function App() {
 
 	return (
 		<div className='app'>
-			<div className='app-left'>
-				<div className='app-header'>
-					<h1>Covid-19 Global</h1>
-					<FormControl className='app-dropdown'>
-						<Select
-							variant='outlined'
-							value={country}
-							onChange={onCountryChange}
-							className='app-dropdown_select'
-						>
-							<MenuItem value='worldwide'>Worldwide</MenuItem>
-							{countries?.map((country, index) => (
-								<MenuItem value={country.value} key={index}>
-									{country.name}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
-				</div>
-				<div className='app-stats'>
-					<InfoBox
-						active={casesType === 'cases'}
-						onClick={(e) => setCasesType('cases')}
-						title='Coronavirus Cases (New)'
-						cases={countryInfo.todayCases}
-						total={countryInfo.cases + ' Total'}
-					/>
-					<InfoBox
-						isGreen
-						active={casesType === 'recovered'}
-						onClick={(e) => setCasesType('recovered')}
-						title='Recovered (Today)'
-						cases={countryInfo.todayRecovered}
-						total={countryInfo.recovered + ' Total'}
-					/>
-					<InfoBox
-						active={casesType === 'deaths'}
-						onClick={(e) => setCasesType('deaths')}
-						title='Deaths (Today)'
-						cases={countryInfo.todayDeaths}
-						total={countryInfo.deaths + ' Total'}
-					/>
-				</div>
-				<div className='app-map'>
-					<Map
-						countries={mapCountries}
-						casesType={casesType}
-						center={mapCenter}
-						zoom={mapZoom}
-					/>
-				</div>
-			</div>
-			<div className='app-right'>
-				<Card>
-					<CardContent>
-						<h3>Recorded Cases by Country</h3>
-						<Table countries={tableData} />
-						<h3 id='worldwide-h3'>Worldwide New {firstCap(casesType)}</h3>
-						<section id='bar-line'>
-							<label htmlFor='lineGraph'>Line graph</label>
-							<input
-								onChange={handleGraph}
-								type='checkbox'
-								name='lineGraph'
-								id='lineGraph'
-							/>
-						</section>
-						<section id='period'>
-							<label htmlFor='range-slider'>Period (days)</label>
-							<input
-								onChange={handlePeriod}
-								type='range'
-								name='graph-range'
-								min='7'
-								max='120'
-								id='range-slider'
-							/>
-							<p>{periodDays}</p>
-						</section>
-						<Graph
-							period={periodDays}
-							graphType={graphType}
-							casesType={casesType}
+			<Grid container className='app-content'>
+				<Grid item className='app-left' md={12} lg={9}>
+					<div className='app-header'>
+						<h1>Covid-19 Global</h1>
+						<FormControl className='app-dropdown'>
+							<Select
+								variant='outlined'
+								value={country}
+								onChange={onCountryChange}
+								className='app-dropdown_select'
+							>
+								<MenuItem value='worldwide'>Worldwide</MenuItem>
+								{countries?.map((country, index) => (
+									<MenuItem value={country.value} key={index}>
+										{country.name}
+									</MenuItem>
+								))}
+							</Select>
+						</FormControl>
+					</div>
+					<div className='app-stats'>
+						<InfoBox
+							active={casesType === 'cases'}
+							onClick={(e) => setCasesType('cases')}
+							title='Coronavirus Cases (New)'
+							cases={countryInfo.todayCases}
+							total={countryInfo.cases + ' Total'}
 						/>
-					</CardContent>
-				</Card>
-			</div>
+						<InfoBox
+							isGreen
+							active={casesType === 'recovered'}
+							onClick={(e) => setCasesType('recovered')}
+							title='Recovered (Today)'
+							cases={countryInfo.todayRecovered}
+							total={countryInfo.recovered + ' Total'}
+						/>
+						<InfoBox
+							active={casesType === 'deaths'}
+							onClick={(e) => setCasesType('deaths')}
+							title='Deaths (Today)'
+							cases={countryInfo.todayDeaths}
+							total={countryInfo.deaths + ' Total'}
+						/>
+					</div>
+					<div className='app-map'>
+						<Map
+							countries={mapCountries}
+							casesType={casesType}
+							center={mapCenter}
+							zoom={mapZoom}
+						/>
+					</div>
+				</Grid>
+				<Grid item className='app-right' md={12} lg={3}>
+					<Card>
+						<CardContent>
+							<h3>Recorded Cases by Country</h3>
+							<Table countries={tableData} />
+							<h3 id='worldwide-h3'>Worldwide New {firstCap(casesType)}</h3>
+							<section id='bar-line'>
+								<label htmlFor='lineGraph'>Line graph</label>
+								<input
+									onChange={handleGraph}
+									type='checkbox'
+									name='lineGraph'
+									id='lineGraph'
+								/>
+							</section>
+							<section id='period'>
+								<label htmlFor='range-slider'>Period (days)</label>
+								<input
+									onChange={handlePeriod}
+									type='range'
+									name='graph-range'
+									min='7'
+									max='120'
+									id='range-slider'
+								/>
+								<p>{periodDays}</p>
+							</section>
+							<Graph
+								period={periodDays}
+								graphType={graphType}
+								casesType={casesType}
+							/>
+						</CardContent>
+					</Card>
+				</Grid>
+			</Grid>
 		</div>
 	);
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Map as Maps, TileLayer } from 'react-leaflet';
+import { MapContainer as Maps, TileLayer } from 'react-leaflet';
 import '../styles/Map.css';
 import { showDataOnMap } from '../utilities';
 
