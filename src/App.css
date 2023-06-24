@@ -97,9 +97,12 @@ body {
 	margin-right: 5px;
 	margin-top: 3px;
 }
-@media (max-width: 1280px){
+@media (max-width: 1280px) {
 	.app-content {
 		padding-bottom: 20px;
+	}
+	.app-left {
+		padding-right: 0px;
 	}
 }
 @media (max-width: 1024px) {
@@ -108,12 +111,6 @@ body {
 	}
 	.app-header {
 		padding: 0;
-	}
-	.app-left {
-		padding: 10px;
-	}
-	.app-right {
-		padding: 10px !important;
 	}
 	.app-stats {
 		padding-right: 0 !important;
