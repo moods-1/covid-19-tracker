@@ -86,7 +86,7 @@ function App() {
 	};
 	const handleGraph = (e) =>
 		e.target.checked ? setGraphType('line') : setGraphType('bar');
-	const handlePeriod = debounce((e) => setPeriodDays(e.target.value), 500);
+	const handlePeriod = debounce((e) => setPeriodDays(e.target.value), 200);
 
 	return (
 		<div className='app'>
@@ -158,18 +158,21 @@ function App() {
 									id='lineGraph'
 								/>
 							</section>
-							<section id='period'>
-								<label htmlFor='range-slider'>Period (days)</label>
-								<input
-									onChange={handlePeriod}
-									type='range'
-									name='graph-range'
-									min='7'
-									max='120'
-									id='range-slider'
-								/>
-								<p>{periodDays}</p>
-							</section>
+							{casesType === 'cases' ? (
+								<section id='period'>
+									<label htmlFor='range-slider'>Period (days)</label>
+									<input
+										onChange={handlePeriod}
+										type='range'
+										name='graph-range'
+										min='7'
+										max='120'
+										id='range-slider'
+									/>
+									<p>{periodDays}</p>
+								</section>
+							) : null}
+
 							<Graph
 								period={periodDays}
 								graphType={graphType}

@@ -22,10 +22,12 @@ function Graph({ period, graphType, casesType }) {
 		}
 		return chartData;
 	};
+
 	useEffect(() => {
+		const fetchPeriod = casesType === 'cases' ? period : 1;
 		const fetchData = async () => {
 			await fetch(
-				`https://disease.sh/v3/covid-19/historical/all?lastdays=${period}`
+				`https://disease.sh/v3/covid-19/historical/all?lastdays=${fetchPeriod}`
 			)
 				.then((res) => res.json())
 				.then((data) => {
